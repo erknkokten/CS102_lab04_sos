@@ -8,7 +8,7 @@ import cs101.sosgame.SOS;
 public class SOSCanvas extends JPanel {
 
     SOS sos;
-
+    //Constructor
     public SOSCanvas(SOS sos){
         this.sos = sos;
         setPreferredSize(new Dimension(sos.getDimension()*30,sos.getDimension()*30 ));
@@ -17,6 +17,9 @@ public class SOSCanvas extends JPanel {
 
     }
 
+    /**
+     * Paints grids for SOS game and also puts letters S and O in grids.
+     */
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.RED);
@@ -43,55 +46,7 @@ public class SOSCanvas extends JPanel {
         }
 
     }
-    //public class mouseListener implements MouseListener{
 
-        /*public void mouseClicked(MouseEvent event){
-
-            char letter = (char)comboBox.getSelectedItem();
-            System.out.println(letter);
-            int y = event.getX() -5;
-            int x = event.getY() -5;
-            System.out.println(x );
-            System.out.println(y );
-
-            int x_index = (int) (x/30) + 1;
-            int y_index = (int) (y/30) + 1;
-            System.out.println(x_index );
-            System.out.println(y_index );
-
-
-            sosCanvas.repaint();
-            sos.printBoard();
-
-            if( !sos.isGameOver()){
-                if(sos.getCellContents(x_index - 1 , y_index - 1) == '.'){
-                    sos.play(letter , x_index, y_index);
-
-                    name1.setText(player1 + ": " + sos.getPlayerScore1());
-                    name2.setText(player2 + ": " + sos.getPlayerScore2());
-                }
-            }
-            else{
-                if(sos.getPlayerScore1() == sos.getPlayerScore2()){
-                    JOptionPane.showMessageDialog(this, "its a tie");
-                }
-                else if(sos.getPlayerScore1() > sos.getPlayerScore2()){
-                    JOptionPane.showMessageDialog(this, player1 + " wins");
-                }
-                else if(sos.getPlayerScore1() < sos.getPlayerScore2()){
-                    JOptionPane.showMessageDialog(this, player2 + " wins");
-                }
-
-            }
-
-
-        }
-        public void mouseReleased(MouseEvent event){}
-        public void mouseEntered(MouseEvent event){}
-        public void mouseExited(MouseEvent event){}
-        public void mousePressed(MouseEvent event){}*/
-
-    //}
 
 
 

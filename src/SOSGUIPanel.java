@@ -13,6 +13,7 @@ public class SOSGUIPanel extends JPanel implements MouseListener {
     String player1, player2;
     JPanel inner;
 
+    //Constructor
     public SOSGUIPanel(SOS sos, String name1, String name2){
         setLayout( new GridLayout());
 
@@ -21,16 +22,17 @@ public class SOSGUIPanel extends JPanel implements MouseListener {
         inner.setBackground(Color.CYAN);
         player1 = name1;
         player2 = name2;
-        this.sos = sos;
         this.name1 = new JLabel(name1);
         this.name2 = new JLabel(name2);
-        comboBox = new JComboBox();
 
+        comboBox = new JComboBox();
+        comboBox.addItem('s');
+        comboBox.addItem('o');
+
+        this.sos = sos;
         sosCanvas = new SOSCanvas(this.sos);
         add(sosCanvas);
 
-        comboBox.addItem('s');
-        comboBox.addItem('o');
         inner.add(comboBox, BorderLayout.SOUTH);
         inner.add(this.name1, BorderLayout.NORTH);
         inner.add(this.name2, BorderLayout.CENTER);
@@ -42,6 +44,11 @@ public class SOSGUIPanel extends JPanel implements MouseListener {
         this.name2.setForeground(Color.black);
     }
 
+    /**
+     * When mouse is clicked, this method is called.
+     * A method that makes game played properly.
+     * @param event
+     */
     public void mouseClicked(MouseEvent event){
 
         char letter = (char) comboBox.getSelectedItem();
@@ -98,6 +105,7 @@ public class SOSGUIPanel extends JPanel implements MouseListener {
 
 
     }
+
     public void mouseReleased(MouseEvent event){}
     public void mouseEntered(MouseEvent event){}
     public void mouseExited(MouseEvent event){}
